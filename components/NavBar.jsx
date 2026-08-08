@@ -55,11 +55,6 @@ export default function NavBar() {
   const menuRef = useRef(null);
   const pathname = usePathname();
 
-  // Close menu on route change
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
   useEffect(() => {
     function handleClickOutside(e) {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -80,10 +75,10 @@ export default function NavBar() {
         >
           <span className="relative h-[36px] overflow-hidden leading-[36px]">
             <span className="block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
-              HARSHH
+              mizu
             </span>
             <span className="block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
-              HARSHH
+              wtorque
             </span>
           </span>
         </Link>
@@ -218,7 +213,7 @@ export default function NavBar() {
                     onSubmit={(e) => {
                       e.preventDefault();
                       const message = e.currentTarget.message.value.trim();
-                      const yourEmail = "harsh@email.com";
+                      const yourEmail = "wtorque@outlook.com";
                       const subject = encodeURIComponent("Portfolio Contact");
                       const body = encodeURIComponent(message);
                       window.location.href = `mailto:${yourEmail}?subject=${subject}&body=${body}`;

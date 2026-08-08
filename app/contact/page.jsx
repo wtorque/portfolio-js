@@ -1,14 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail, Phone, Send } from "lucide-react";
+import { ArrowUpRight, Mail, Send } from "lucide-react";
 import {
   FaGithub,
   FaLinkedin,
   FaInstagram,
-  FaSnapchat,
   FaDiscord,
-  FaWhatsapp,
 } from "react-icons/fa";
 
 export default function Contact() {
@@ -50,24 +48,12 @@ export default function Contact() {
       icon: FaInstagram,
     },
     {
-      label: "Snapchat",
-      value: "harsh.agre16",
-      href: "https://snapchat.com/add/harsh.agre16",
-      icon: FaSnapchat,
-    },
-    {
       label: "Discord",
       value: "wtorque",
       href: "#",
       icon: FaDiscord,
     },
-    {
-      label: "WhatsApp",
-      value: "+63 912 105 9253",
-      href: "https://wa.me/639121059253",
-      icon: FaWhatsapp,
-    },
-  ];
+];
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -76,7 +62,7 @@ export default function Contact() {
     const mob = form.mob.value.trim();
     const message = form.message.value.trim();
 
-    const yourEmail = "harsh@email.com";
+    const yourEmail = "wtorque@outlook.com";
     const subject = encodeURIComponent(
       `Portfolio Contact from ${name || "Visitor"}`
     );
@@ -244,7 +230,7 @@ export default function Contact() {
                 <div className="mt-10 space-y-4">
                   {/* email */}
                   <a
-                    href="mailto:harsh@email.com"
+                    href="mailto:wtorque@outlook.com"
                     className="group flex items-center justify-between rounded-[24px] border border-white/10 bg-black/30 p-4 transition duration-300 hover:bg-white hover:text-black"
                   >
                     <span className="flex min-w-0 items-center gap-4">
@@ -256,33 +242,10 @@ export default function Contact() {
                           Email
                         </span>
                         <span className="mt-1 hidden truncate text-sm font-medium sm:block">
-                          harsh@email.com
+                          wtorque@outlook.com
                         </span>
                         <span className="mt-1 block text-sm font-medium sm:hidden">
                           Go to mail
-                        </span>
-                      </span>
-                    </span>
-                    <ArrowUpRight size={18} />
-                  </a>
-
-                  {/* WhatsApp / Mobile */}
-                  <a
-                    href="https://wa.me/639121059253"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group flex items-center justify-between rounded-[24px] border border-white/10 bg-black/30 p-4 transition duration-300 hover:bg-white hover:text-black"
-                  >
-                    <span className="flex min-w-0 items-center gap-4">
-                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white/10 transition group-hover:bg-black group-hover:text-white">
-                        <Phone size={18} />
-                      </span>
-                      <span className="min-w-0">
-                        <span className="block text-xs uppercase tracking-[0.18em] text-white/35 transition group-hover:text-black/40">
-                          WhatsApp
-                        </span>
-                        <span className="mt-1 block truncate text-sm font-medium">
-                          +63 912 105 9253
                         </span>
                       </span>
                     </span>

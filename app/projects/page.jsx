@@ -237,7 +237,7 @@ export default function Projects() {
               animations, and responsive web experiences.
             </p>
             <a
-              href="mailto:harsh@email.com"
+              href="mailto:wtorque@outlook.com"
               className="group relative mt-9 inline-flex h-14 items-center justify-center overflow-hidden rounded-full bg-white/5 px-8 text-sm font-bold uppercase text-white transition duration-300 hover:text-black"
             >
               <span className="relative z-10 flex items-center gap-3">

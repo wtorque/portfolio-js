@@ -1,15 +1,41 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Code2, Layers, Mail, Sparkles } from "lucide-react";
 import Link from "next/link";
 import {
-  SiReact,
-  SiTailwindcss,
-  SiFramer,
   SiJavascript,
+  SiDiscord,
+  SiNodedotjs,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiGit,
 } from "react-icons/si";
-import { FaHtml5, FaCss3, FaBootstrap, FaGitAlt } from "react-icons/fa";
+import { FaHtml5, FaCss3 } from "react-icons/fa";
+
+const HERO_HEADINGS = [
+  ["Beautiful", "Websites", "That work."],
+  ["Modern", "Websites", "With purpose."],
+  ["Digital", "Experiences", "Made simple."],
+  ["Ideas", "Made", "Digital."],
+  ["Websites", "Made", "Thoughtfully."],
+  ["Simple", "Websites", "Done right."],
+  ["Clean", "Designs", "That work."],
+  ["Digital", "Experiences", "With purpose."],
+  ["Thoughtful", "Designs", "Built well."],
+  ["Websites", "That feel", "Different."],
+  ["Designing", "Digital", "Experiences."],
+  ["Building", "Digital", "Experiences."],
+  ["Ideas", "Into", "Experiences."],
+  ["From ideas", "To digital", "Experiences."],
+  ["Design", "That feels", "Effortless."],
+  ["Simple", "Design", "Better experiences."],
+  ["Websites", "With", "A purpose."],
+  ["Creating", "Things", "That matter."],
+  ["Digital", "Things", "Made better."],
+  ["Crafting", "The modern", "Web."],
+];
 
 const revealUp = {
   hidden: { y: "120%" },
@@ -46,15 +72,24 @@ function TextReveal({ children, className = "", delay }) {
 }
 
 export default function Home() {
+  const [headingIndex, setHeadingIndex] = useState(0);
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * HERO_HEADINGS.length);
+    setHeadingIndex(randomIndex);
+  }, []);
+
+  const heading = HERO_HEADINGS[headingIndex];
+
   const techStack = [
-    { name: "React", icon: SiReact },
-    { name: "Tailwind", icon: SiTailwindcss },
-    { name: "Framer", icon: SiFramer },
     { name: "JavaScript", icon: SiJavascript },
-    { name: "Bootstrap", icon: FaBootstrap },
-    { name: "Git", icon: FaGitAlt },
-    { name: "CSS3", icon: FaCss3 },
-    { name: "HTML5", icon: FaHtml5 },
+    { name: "Discord.js", icon: SiDiscord },
+    { name: "Node.js", icon: SiNodedotjs },
+    { name: "Next.js", icon: SiNextdotjs },
+    { name: "Tailwind", icon: SiTailwindcss },
+    { name: "Git", icon: SiGit },
+    { name: "CSS", icon: FaCss3 },
+    { name: "HTML", icon: FaHtml5 },
   ];
 
   return (
@@ -75,13 +110,16 @@ export default function Home() {
               className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/60 backdrop-blur-xl"
             >
               <Sparkles size={15} className="text-white" />
-              Frontend Developer / Full Stack Learner
+              Web Developer Learner • Discord Bot Developer
             </motion.div>
 
-            <h1 className="max-w-6xl text-[4rem] font-semibold leading-[0.86] tracking-[-0.07em] text-white sm:text-[13vw] lg:text-[6vw]">
-              <TextReveal delay={1}>Smooth</TextReveal>
-              <TextReveal delay={2}>websites</TextReveal>
-              <TextReveal delay={3}>with feel.</TextReveal>
+            <h1
+              key={headingIndex}
+              className="max-w-6xl text-[4rem] font-semibold leading-[0.86] tracking-[-0.07em] text-white sm:text-[13vw] lg:text-[6vw]"
+            >
+              <TextReveal delay={1}>{heading[0]}</TextReveal>
+              <TextReveal delay={2}>{heading[1]}</TextReveal>
+              <TextReveal delay={3}>{heading[2]}</TextReveal>
             </h1>
 
             <motion.div
@@ -92,8 +130,11 @@ export default function Home() {
               className="mt-8 grid max-w-3xl gap-6 md:grid-cols-[1fr_auto]"
             >
               <p className="max-w-xl text-base leading-8 text-white/55 md:text-lg">
-                I build premium, responsive, animated web interfaces using
-                React, Tailwind, Framer Motion and modern frontend tools.
+                I’m a web developer learner building modern interfaces and
+                creating Discord bots with JavaScript and Node.js.
+                <span className="mt-2 block text-white/70">
+                  Also available for freelancing work.
+                </span>
               </p>
 
               <div className="flex items-start gap-3">
@@ -112,7 +153,7 @@ export default function Home() {
                 </Link>
 
                 <a
-                  href="mailto:harsh@email.com"
+                  href="mailto:wtorque@outlook.com"
                   className="group grid h-14 w-14 place-items-center rounded-full border border-white/10 bg-white/5 text-white backdrop-blur-xl transition hover:bg-white hover:text-black"
                   aria-label="Contact"
                 >
