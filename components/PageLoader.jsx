@@ -61,7 +61,7 @@ export default function PageLoader() {
             className="relative z-10 px-6 text-center"
           >
             <h1 className="mt-4 text-4xl font-semibold tracking-[-0.07em] text-white sm:text-6xl">
-              Hi , mizu here !
+              Hi , im Harshh !
             </h1>
           </motion.div>
         </motion.div>
