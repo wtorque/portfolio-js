@@ -14,7 +14,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://harshh.pro](https://harshh.pro) with your browser to see the result.
+Open [https://harshh.pro](https://harshh.pro) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
